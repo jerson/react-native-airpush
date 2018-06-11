@@ -4,13 +4,12 @@ package me.jerson.mobile.ads.airpush;
 import android.util.Log;
 import com.facebook.react.bridge.*;
 import com.facebook.react.module.annotations.ReactModule;
-import com.setbeat.music.MainApplication;
 import com.YOURPACKAGETOKEN.AdConfig;
 import com.YOURPACKAGETOKEN.AdListener;
 import com.YOURPACKAGETOKEN.Main;
 
 public class RNAirpushModule extends ReactContextBaseJavaModule
-    implements MainApplication.ServiceListener, LifecycleEventListener, AdListener {
+    implements  LifecycleEventListener, AdListener {
 
   private static final String TAG = "RNAirpushModule";
   private ReactContext reactContext;
@@ -182,18 +181,6 @@ public class RNAirpushModule extends ReactContextBaseJavaModule
   public void onHostDestroy() {
     isLoaded = false;
     Log.d(TAG, "onHostDestroy");
-
-  }
-
-  @Override
-  public void onConnect() {
-    Log.d(TAG, "onConnect");
-
-  }
-
-  @Override
-  public void onDisconnect() {
-    Log.d(TAG, "onDisconnect");
 
   }
 
