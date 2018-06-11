@@ -28,8 +28,9 @@ Airpush support for **Android**
     ```
       compile project(':react-native-airpush')
     ```
-4.  Add `com-YOURPACKAGETOKEN.jar` to your Android libs dir
-5.  Replace `YOURPACKAGwith your Airpush token in `ETOKEN` android/src/main/java/me/jerson/mobile/ads/airpush/` dir
+4.  Add `com-YOURPACKAGETOKEN.jar` to your `android/app/libs/airpush` dir
+5.  Replace `YOURPACKAGETOKEN` with your Airpush token in `android/src/main/java/me/jerson/mobile/ads/airpush/*.java` dir
+
 
 ## Usage
 
