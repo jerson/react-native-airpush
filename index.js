@@ -9,7 +9,7 @@ import {
 
 const { RNAirpush } = NativeModules;
 
-const RNBannerView = requireNativeComponent("RNAirpushBannerView", BannerView);
+const RNBannerView = requireNativeComponent("RNAirpush", BannerView);
 
 const TAG = "[Airpush]";
 export default class Airpush {

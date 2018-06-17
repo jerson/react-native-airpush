@@ -75,7 +75,7 @@ public class RNAirpushBannerViewManager extends SimpleViewManager<ReactViewGroup
 
     @Override
     public String getName() {
-        return "RNAirpushBannerView";
+        return "RNAirpush";
     }
 
     @Override
