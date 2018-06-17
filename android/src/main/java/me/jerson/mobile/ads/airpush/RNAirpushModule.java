@@ -8,8 +8,7 @@ import com.YOURPACKAGETOKEN.AdConfig;
 import com.YOURPACKAGETOKEN.AdListener;
 import com.YOURPACKAGETOKEN.Main;
 
-public class RNAirpushModule extends ReactContextBaseJavaModule
-    implements  LifecycleEventListener, AdListener {
+public class RNAirpushModule extends ReactContextBaseJavaModule implements LifecycleEventListener, AdListener {
 
   private static final String TAG = "RNAirpushModule";
   private ReactContext reactContext;
@@ -20,6 +19,7 @@ public class RNAirpushModule extends ReactContextBaseJavaModule
     super(reactContext);
     this.reactContext = reactContext;
     this.reactContext.addLifecycleEventListener(this);
+
   }
 
   @Override
@@ -28,13 +28,9 @@ public class RNAirpushModule extends ReactContextBaseJavaModule
   }
 
   protected void initManager() {
-
     if (manager == null && reactContext.getCurrentActivity() != null) {
       manager = new Main(reactContext.getCurrentActivity(), this);
-    } else {
-      Log.w(TAG, "[ERROR] initManager");
     }
-
   }
 
   @ReactMethod
@@ -78,23 +74,18 @@ public class RNAirpushModule extends ReactContextBaseJavaModule
   }
 
   @ReactMethod
-  public void setTestMode(int testMode) {
-
-    boolean testModeVal = testMode == 1;
-    AdConfig.setTestMode(testModeVal);
+  public void setTestMode(Boolean testMode) {
+    AdConfig.setTestMode(testMode);
   }
 
   @ReactMethod
-  public void setCachingEnabled(int cachingEnabled) {
-
-    boolean cachingEnabledeVal = cachingEnabled == 1;
-    AdConfig.setCachingEnabled(cachingEnabledeVal);
+  public void setCachingEnabled(Boolean cachingEnabled) {
+    AdConfig.setCachingEnabled(cachingEnabled);
   }
 
   @ReactMethod
-  public void setShowErrorDialog(int showErrorDialog) {
-    boolean showErrorDialogVal = showErrorDialog == 1;
-    AdConfig.setShowErrorDialog(showErrorDialogVal);
+  public void setShowErrorDialog(Boolean showErrorDialog) {
+    AdConfig.setShowErrorDialog(showErrorDialog);
   }
 
   @ReactMethod
