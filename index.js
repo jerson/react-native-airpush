@@ -112,17 +112,15 @@ export default class Airpush {
 
 export class BannerView extends React.Component {
   render() {
-    const { width, height, style, ...props } = this.props;
+    const { adWidth, adHeight, style, ...props } = this.props;
 
     return (
-      <View style={[style, { width, height }]}>
-        <RNBannerView
-          style={[style, { width, height }]}
-          adWidth={adWidth}
-          adHeight={adHeight}
-          {...props}
-        />
-      </View>
+      <RNBannerView
+        style={[{ width: adWidth, height: adHeight }, style]}
+        adWidth={adWidth}
+        adHeight={adHeight}
+        {...props}
+      />
     );
   }
 }
